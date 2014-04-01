@@ -1,0 +1,8 @@
+body {background-color:#fafafa; font-family: sans-serif; color: #333; border-top: 20px solid #EFECEA; margin: 0; padding: 0;}
+.container {width: 960px; margin: 0 auto;}
+h1 {font-size: 2.5em;}
+a {color:#D72;}
+.examples {text-align: center;}
+:not(pre) > code[class*="language-"], pre[class*="language-"] {background-color: #EFECEA;}
+.token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string, .token.variable{background-color: transparent;}
+footer {text-align: center; background-color: #EFECEA; padding: 10px; color: #666}

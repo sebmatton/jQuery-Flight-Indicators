@@ -9,28 +9,90 @@ https://github.com/sebmatton/jQuery-Flight-Indicators
  -->
 <html lang="en" dir="ltr">
 <head>
-  	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
-	<title>jQuery WebFlightIndicators</title>
-	<style type="text/css">
-		body {background-color:#fafafa; font-family: sans-serif; color: #333;}
-		a {color:;}
-		pre {background-color: #eaeaea; padding: 10px; border: 1px solid #ccc; border-radius: 5px; white-space: pre-wrap;}
-	</style>
+    <meta charset="utf-8">
+    <!-- Syntax coloration -->
+    <link rel="stylesheet" type="text/css" href="examples/prism/prism.css" />
+    <!-- This page style -->
+    <link rel="stylesheet" type="text/css" href="examples/style.css" />
+    <!-- Flight Indicators library styles -->
+    <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
+    <title>jQuery Flight Indicators Plugin</title>
 </head>
 <body>
-<h1>jQuery WebFlightIndicators Example</h1>
-<p>Github project : <a href="https://github.com/sebmatton/WebFlightIndicators">https://github.com/sebmatton/WebFlightIndicators</a></p>
-<h2>Attitude example</h2>
-<p>This is a simple example showing an attitude indicator with pitch of 3 degrees and roll of 8 degrees. As you can see, the size can be chosen to be as big as you want since we only use vector graphics (svg). For this example size was set to 350 pixels.</p>
-<p><pre>var first_attitude = $.flightIndicator('#first_attitude', 'attitude', {size:350, roll:8, pitch:3, showBox : true});</pre></p>
-<span id="first_attitude"></span>
-<h2>Realtime indicators</h2>
-<span id="attitude"></span>
-<span id="heading"></span>
-<span id="variometer"></span>
-<span id="airspeed"></span>
-<span id="altimeter"></span>
+<div class="container">
+    <!-- Introduction -->
+    <h1>jQuery Flight Indicators Plugin Example</h1>
+    <p>The Flight Indicators Plugin allows you to display high quality flight indicators using html, css3, jQuery and SVG images. The methods make customization and real time implementation really easy. Further, since all the images are vector svg you can resize the indicators to your application without any quality loss ! </p>
+    <p>This project is hosted on Github : <a href="https://github.com/sebmatton/jQuery-Flight-Indicators">https://github.com/sebmatton/jQuery-Flight-Indicators</a></p>
+
+    <!-- First example -->
+    <h2>Attitude example</h2>
+    <p>This is a simple example showing an attitude indicator with pitch of 3 degrees and roll of 8 degrees. As you can see, the size can be chosen to be as big as you want since we only use vector graphics (svg). For this example size was set to 350 pixels.</p>
+    <p><pre><code class="language-javascript">var first_attitude = $.flightIndicator('#first_attitude', 'attitude', {size:350, roll:8, pitch:3, showBox : true});</code></pre></p>
+    
+    <div class="examples">
+        <!-- The block where we want to place an indicator -->
+        <span id="first_attitude"></span>
+    </div>
+
+    <!-- Second example -->
+    <h2>Realtime indicators</h2>
+    <p>This example shows a real time application for each type of indicator.</p>
+    <div class="examples">
+        <div>
+            <span id="attitude"></span>
+            <span id="heading"></span>
+            <span id="variometer"></span>
+        </div><div>
+            <span id="airspeed"></span>
+            <span id="altimeter"></span>
+        </div>
+    </div>
+
+    <p>The code of this example is quite simple. The html :</p>
+    <p><pre><code class="language-javascript">&lt;span id=&quot;attitude&quot;&gt;&lt;/span&gt;
+&lt;span id=&quot;heading&quot;&gt;&lt;/span&gt;
+&lt;span id=&quot;variometer&quot;&gt;&lt;/span&gt;
+&lt;span id=&quot;airspeed&quot;&gt;&lt;/span&gt;
+&lt;span id=&quot;altimeter&quot;&gt;&lt;/span&gt;</code></pre></p>
+    
+    <p>And the javascript :</p>
+    <p><pre><code class="language-javascript">// Dynamic examples
+var attitude = $.flightIndicator('#attitude', 'attitude', {roll:50, pitch:-20, size:200, showBox : true});
+var heading = $.flightIndicator('#heading', 'heading', {heading:150, showBox:true});
+var variometer = $.flightIndicator('#variometer', 'variometer', {vario:-5, showBox:true});
+var airspeed = $.flightIndicator('#airspeed', 'airspeed', {showBox: false});
+var altimeter = $.flightIndicator('#altimeter', 'altimeter');
+
+// Update at 20Hz
+var increment = 0;
+setInterval(function() {
+    // Attitude update
+    attitude.setRoll(30*Math.sin(increment/10));
+    attitude.setPitch(50*Math.sin(increment/20));
+    
+    // Heading update
+    heading.setHeading(increment);
+    
+    // Vario update
+    variometer.setVario(2*Math.sin(increment/10));
+    
+    // Airspeed update
+    airspeed.setAirSpeed(80+80*Math.sin(increment/10));
+    
+    // Altimeter update
+    altimeter.setAltitude(10*increment);
+    altimeter.setPressure(1000+3*Math.sin(increment/50));
+    increment++;
+}, 50);</code></pre></p>
+</div>
+
+<footer>
+    jQuery Flight Indicator plugin by Sébastien Matton - License GPLv3
+</footer>
+
+<!-- Syntax color -->
+<script src="examples/prism/prism.js"></script>
 
 <!-- Importing jQuery library -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
@@ -52,7 +114,7 @@ var altimeter = $.flightIndicator('#altimeter', 'altimeter');
 // Update at 20Hz
 var increment = 0;
 setInterval(function() {
-	// Attitude update
+    // Attitude update
     attitude.setRoll(30*Math.sin(increment/10));
     attitude.setPitch(50*Math.sin(increment/20));
     
