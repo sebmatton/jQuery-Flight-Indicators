@@ -1,0 +1,54 @@
+<!-- 
+
+WebFlightIndicators by Sébastien Matton
+https://github.com/sebmatton/WebFlightIndicators
+
+This work was inspired by https://bitbucket.org/igneosaur/attitude-indicator
+ 
+ -->
+<html lang="en" dir="ltr">
+<head>
+  	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
+	<title>jQuery WebFlightIndicators</title>
+	<style type="text/css">
+		body {background-color:#fafafa; font-family: sans-serif; color: #333;}
+		a {color:;}
+	</style>
+</head>
+<body>
+<h1>jQuery WebFlightIndicators Example</h1>
+<p>Github project : <a href="https://github.com/sebmatton/WebFlightIndicators">https://github.com/sebmatton/WebFlightIndicators</a></p>
+<h2>Attitude example</h2>
+<span id="first_attitude"></span>
+<h2>Realtime indicators</h2>
+<span id="attitude"></span>
+<span id="heading"></span>
+<span id="variometer"></span>
+<span id="airspeed"></span>
+<span id="altimeter"></span>
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.flightindicator.js"></script>
+<script type="text/javascript">
+var first_attitude = $.flightIndicator('#first_attitude', 'attitude', {size:300, showBox : true});
+var attitude = $.flightIndicator('#attitude', 'attitude', {roll:50, pitch:-20, size:200, showBox : true});
+var heading = $.flightIndicator('#heading', 'heading', {heading:150, showBox:true});
+var variometer = $.flightIndicator('#variometer', 'variometer', {vario:-5, showBox:true});
+var airspeed = $.flightIndicator('#airspeed', 'airspeed');
+var altimeter = $.flightIndicator('#altimeter', 'altimeter');
+
+var increment = 0;
+setInterval(function() {
+	increment++;
+    attitude.setRoll(30*Math.sin(increment/10));
+    attitude.setPitch(50*Math.sin(increment/20));
+    heading.setHeading(increment);
+    variometer.setVario(2*Math.sin(increment/10));
+    airspeed.setAirSpeed(80+80*Math.sin(increment/10));
+    altimeter.setAltitude(10*increment);
+    altimeter.setPressure(1000+3*Math.sin(increment/50));
+}, 50);
+</script>
+</body>
+</html>
