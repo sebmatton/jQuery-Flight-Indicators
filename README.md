@@ -1,7 +1,10 @@
 jQuery Flight Indicators
 ===================
 
-"Flight Indicators" gives the ability to display web based flight indicator using html, css3, jQuery and SVG. Currently supported indicators are :
+The Flight Indicators Plugin allows you to display high quality flight indicators using html, css3, jQuery and SVG images. The methods make customization and real time implementation really easy. Further, since all the images are vector svg you can resize the indicators to your application without any quality loss ! 
+
+Currently supported indicators are :
+
 * Attitude (artificial horizon)
 * Heading 
 * Vertical speed
@@ -10,9 +13,15 @@ jQuery Flight Indicators
 
 Example & Demo
 -------------------
-![demo](https://raw.githubusercontent.com/sebmatton/jQuery-Flight-Indicators/master/example.png "demo")
-
 Demo can be found here : [http://sebmatton.github.io/flightindicators/](http://sebmatton.github.io/flightindicators/)
+
+Here are a few examples of currently implemented indicators :
+
+![demo_example](https://raw.githubusercontent.com/sebmatton/jQuery-Flight-Indicators/master/example.png "Indicator examples")
+
+The image below shows a part of an 800px indicator. Vector images allows you to keep high quality render with large indicators.
+
+![demo_highres](https://raw.githubusercontent.com/sebmatton/jQuery-Flight-Indicators/master/example_highres.png "High resolution indicator")
 
 Usage
 -------------------
@@ -56,48 +65,20 @@ Initial settings can be modified using the `options` parameter. Here are the val
 
 ```js
 var options = {
-	size : 200,
-	roll : 0,
-	pitch : 0,
-	heading: 0,
-	vario: 0,
-	airspeed: 0,
-	altitude: 0,
-	pressure: 1000,
-	showBox : true,
-	img_directory : 'img/'
+	size : 200,				// Sets the size in pixels of the indicator (square)
+	roll : 0,				// Roll angle in degrees for an attitude indicator
+	pitch : 0,				// Pitch angle in degrees for an attitude indicator
+	heading: 0,				// Heading angle in degrees for an heading indicator
+	vario: 0,				// Variometer in 1000 feets/min for the variometer indicator
+	airspeed: 0,			// Air speed in knots for an air speed indicator
+	altitude: 0,			// Altitude in feets for an altimeter indicator
+	pressure: 1000,			// Pressure in hPa for an altimeter indicator
+	showBox : true,			// Sets if the outer squared box is visible or not (true or false)
+	img_directory : 'img/'	// The directory where the images are saved to
 }
 ```
 
-##### Size
-The `size` option sets the size in pixels of the indicator.
-
-##### Roll
-The `roll` option sets the roll angle in degrees for an attitude indicator.
-
-##### Pitch
-The `pitch` option sets the pitch angle in degrees for an attitude indicator.
-
-##### Heading
-The `heading` option sets the heading angle in degrees for an heading indicator.
-
-##### Vario
-The `vario` option sets the variometer value in 1000 feets per minute for the variometer indicator !
-
-##### Airspeed
-The `airspeed` option sets the air speed angle knots for an air speed indicator.
-
-##### Altitude
-The `altitude` option sets the altitude in feets for an altimeter indicator.
-
-##### Pressure
-The `pressure` option sets the pressure in hpa for an altimeter indicator.
-
-##### ShowBox
-The `showBox` option sets if the outer squared box is visible or not. It may only take the value `true` of `false`.
-
-##### img_directory
-the `img_directory` option sets the directory where the images are saved. The default value is `img/` directory.
+The options parameters are optionnals.
 
 ### Updating the indicator informations
 Some methods are used to update the indicators, giving the opportunity to create realtime GUI !
@@ -126,7 +107,14 @@ indicator.hideBox();				// Make the outer squared box of any instrument invisibl
 
 Author and License
 -----------
-Hi ! I'm Sebastien Matton and I'm from Belgium. This project was initialy developped for an engineering project during my Master's Thesis. Feel free to use it.
+Author : Sébastien Matton (seb_matton@hotmail.com)
+
+jQuery Flight Indicators plugin was developped as part of my Master's Thesis since I needed a realtime interface showing the flight datas about for a quadcopter.
+
+The project is published under GPLv3 License. See LICENSE file for more informations
+
+Feel free to take part in this project or/and contact me for any reason :-)
+
 
 Thanks
 ---------

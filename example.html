@@ -1,9 +1,10 @@
 <!-- 
 
-WebFlightIndicators by Sébastien Matton
-https://github.com/sebmatton/WebFlightIndicators
+jQuery Flight Indicators plugin
+By Sébastien Matton (seb_matton@hotmail.com)
+Published under GPLv3 License.
 
-This work was inspired by https://bitbucket.org/igneosaur/attitude-indicator
+https://github.com/sebmatton/jQuery-Flight-Indicators
  
  -->
 <html lang="en" dir="ltr">
@@ -14,12 +15,15 @@ This work was inspired by https://bitbucket.org/igneosaur/attitude-indicator
 	<style type="text/css">
 		body {background-color:#fafafa; font-family: sans-serif; color: #333;}
 		a {color:;}
+		pre {background-color: #eaeaea; padding: 10px; border: 1px solid #ccc; border-radius: 5px; white-space: pre-wrap;}
 	</style>
 </head>
 <body>
 <h1>jQuery WebFlightIndicators Example</h1>
 <p>Github project : <a href="https://github.com/sebmatton/WebFlightIndicators">https://github.com/sebmatton/WebFlightIndicators</a></p>
 <h2>Attitude example</h2>
+<p>This is a simple example showing an attitude indicator with pitch of 3 degrees and roll of 8 degrees. As you can see, the size can be chosen to be as big as you want since we only use vector graphics (svg). For this example size was set to 350 pixels.</p>
+<p><pre>var first_attitude = $.flightIndicator('#first_attitude', 'attitude', {size:350, roll:8, pitch:3, showBox : true});</pre></p>
 <span id="first_attitude"></span>
 <h2>Realtime indicators</h2>
 <span id="attitude"></span>
@@ -28,26 +32,43 @@ This work was inspired by https://bitbucket.org/igneosaur/attitude-indicator
 <span id="airspeed"></span>
 <span id="altimeter"></span>
 
-<script src="js/jquery.js"></script>
-<script src="js/jquery.flightindicator.js"></script>
+<!-- Importing jQuery library -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+<!-- Importing the FlightIndicators library -->
+<script src="js/jquery.flightindicators.js"></script>
+
+<!-- Let start our scripts -->
 <script type="text/javascript">
-var first_attitude = $.flightIndicator('#first_attitude', 'attitude', {size:300, showBox : true});
+// First static example
+var first_attitude = $.flightIndicator('#first_attitude', 'attitude', {size:350, roll:8, pitch:3, showBox : true});
+// Dynamic examples
 var attitude = $.flightIndicator('#attitude', 'attitude', {roll:50, pitch:-20, size:200, showBox : true});
 var heading = $.flightIndicator('#heading', 'heading', {heading:150, showBox:true});
 var variometer = $.flightIndicator('#variometer', 'variometer', {vario:-5, showBox:true});
-var airspeed = $.flightIndicator('#airspeed', 'airspeed');
+var airspeed = $.flightIndicator('#airspeed', 'airspeed', {showBox: false});
 var altimeter = $.flightIndicator('#altimeter', 'altimeter');
 
+// Update at 20Hz
 var increment = 0;
 setInterval(function() {
-	increment++;
+	// Attitude update
     attitude.setRoll(30*Math.sin(increment/10));
     attitude.setPitch(50*Math.sin(increment/20));
+    
+    // Heading update
     heading.setHeading(increment);
+    
+    // Vario update
     variometer.setVario(2*Math.sin(increment/10));
+    
+    // Airspeed update
     airspeed.setAirSpeed(80+80*Math.sin(increment/10));
+    
+    // Altimeter update
     altimeter.setAltitude(10*increment);
     altimeter.setPressure(1000+3*Math.sin(increment/50));
+    increment++;
 }, 50);
 </script>
 </body>
