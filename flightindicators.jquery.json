@@ -1,24 +1,35 @@
 {
-	"name": "flightindicators",
-	"title": "Flight Indicators jQuery Plugin",
-	"description": "allows you to display high quality flight indicators using html, css3, jQuery and SVG images.",
-	"keywords": ["flight","indicator","artificial", "horizon", "instrument", "gauge", "fly", "plane", "monitoring", "realtime"],
-	"version": "1.0.1",
-	"author": {	
-		"name": "Sébastien Matton",
-		"url": "https://github.com/sebmatton/jQuery-Flight-Indicators"
-	},
-	"licenses": [
-		{
-			"type": "GPLv3",
-			"url": "https://raw.githubusercontent.com/sebmatton/jQuery-Flight-Indicators/master/LICENSE"
-		}
-	],
-	"bugs": "https://github.com/sebmatton/jQuery-Flight-Indicators/issues",
-	"homepage": "https://github.com/sebmatton/jQuery-Flight-Indicators",
-	"docs": "https://github.com/sebmatton/jQuery-Flight-Indicators",
-	"download": "https://github.com/sebmatton/jQuery-Flight-Indicators",
-	"dependencies": {
-		"jquery": ">=1.5"
-	}
+    "name": "flightindicators",
+    "title": "Flight Indicators jQuery Plugin",
+    "description": "allows you to display high quality flight indicators using html, css3, jQuery and SVG images.",
+    "keywords": [
+        "flight",
+        "indicator",
+        "artificial",
+        "horizon",
+        "instrument",
+        "gauge",
+        "fly",
+        "plane",
+        "monitoring",
+        "realtime"
+    ],
+    "version": "1.0.1",
+    "author": {
+        "name": "Sébastien Matton",
+        "url": "https://github.com/sebmatton/jQuery-Flight-Indicators"
+    },
+    "licenses": [
+        {
+            "type": "GPLv3",
+            "url": "https://raw.githubusercontent.com/sebmatton/jQuery-Flight-Indicators/master/LICENSE"
+        }
+    ],
+    "bugs": "https://github.com/sebmatton/jQuery-Flight-Indicators/issues",
+    "homepage": "https://github.com/sebmatton/jQuery-Flight-Indicators",
+    "docs": "https://github.com/sebmatton/jQuery-Flight-Indicators",
+    "download": "https://github.com/sebmatton/jQuery-Flight-Indicators",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
 }
