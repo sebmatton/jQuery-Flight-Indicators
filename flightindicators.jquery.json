@@ -2,7 +2,7 @@
     "name": "flightindicators",
     "title": "Flight Indicators jQuery Plugin",
     "description": "allows you to display high quality flight indicators using html, css3, jQuery and SVG images.",
-    "version": "1.0.3",
+    "version": "1.0.2",
     "keywords": [
         "flight",
         "indicator",
