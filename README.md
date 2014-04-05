@@ -17,11 +17,11 @@ Demo can be found here : [http://sebmatton.github.io/flightindicators/](http://s
 
 Here are a few examples of currently implemented indicators :
 
-![demo_example](https://raw.githubusercontent.com/sebmatton/jQuery-Flight-Indicators/master/examples_data/example.png "Indicator examples")
+![demo_example](https://raw.githubusercontent.com/sebmatton/jQuery-Flight-Indicators/master/_examples_data/example.png "Indicator examples")
 
 The image below shows a part of an 800px indicator. Vector images allows you to keep high quality render with large indicators.
 
-![demo_highres](https://raw.githubusercontent.com/sebmatton/jQuery-Flight-Indicators/master/examples_data/example_highres.png "High resolution indicator")
+![demo_highres](https://raw.githubusercontent.com/sebmatton/jQuery-Flight-Indicators/master/_examples_data/example_highres.png "High resolution indicator")
 
 Usage
 -------------------
