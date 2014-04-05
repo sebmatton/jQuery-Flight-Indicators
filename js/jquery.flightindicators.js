@@ -1,3 +1,7 @@
+/* 
+* jQuery Flight Indicators (https://github.com/sebmatton/jQuery-Flight-Indicators)
+* Licensed under GPLv3
+*/
 (function($) {
 	function FlightIndicator( placeholder, type, options ) {
 		// Initial configuration

@@ -2,6 +2,7 @@
     "name": "flightindicators",
     "title": "Flight Indicators jQuery Plugin",
     "description": "allows you to display high quality flight indicators using html, css3, jQuery and SVG images.",
+    "version": "1.0.2",
     "keywords": [
         "flight",
         "indicator",
@@ -14,7 +15,6 @@
         "monitoring",
         "realtime"
     ],
-    "version": "1.0.1",
     "author": {
         "name": "Sébastien Matton",
         "url": "https://github.com/sebmatton/jQuery-Flight-Indicators"
@@ -30,6 +30,6 @@
     "docs": "https://github.com/sebmatton/jQuery-Flight-Indicators",
     "download": "https://github.com/sebmatton/jQuery-Flight-Indicators",
     "dependencies": {
-        "jquery": ">=1.5"
+        "jquery": ">=1.8"
     }
 }
