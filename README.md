@@ -1,4 +1,4 @@
-Flight Indicators jQuery plugin
+Flight Indicators jQuery plugin [![GitHub version](https://badge.fury.io/gh/sebmatton%2FjQuery-Flight-Indicators.svg)](http://badge.fury.io/gh/sebmatton%2FjQuery-Flight-Indicators) 
 ===================
 
 The Flight Indicators Plugin allows you to display high quality flight indicators using html, css3, jQuery and SVG images. The methods make customization and real time implementation really easy. Further, since all the images are vector svg you can resize the indicators to your application without any quality loss ! 

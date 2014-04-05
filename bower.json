@@ -1,6 +1,6 @@
   {
   "name": "jquery-flight-indicators",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "js/jquery.flightindicators.min.js",
   "ignore": [
     ".gitignore",
@@ -8,10 +8,12 @@
     "*.md",
     "_img_sources/*",
     "_examples_data/example.png",
-    "_examples_data/example_highres.png"
+    "_examples_data/example_highres.png",
+    "flightindicators.jquery.json",
+    "bower.json"
   ],
   "dependencies": {
-    "jquery": "1.11.0"
+    "jquery": ">=1.3.0"
   },
   "keywords": [
     "flight",
