@@ -1,0 +1,39 @@
+  {
+  "name": "jquery-flight-indicators",
+  "version": "1.0.2",
+  "main": "js/jquery.flightindicators.min.js",
+  "ignore": [
+    ".gitignore",
+    "README.html",
+    "*.md",
+    "_img_sources/*",
+    "_examples_data/example.png",
+    "_examples_data/example_highres.png"
+  ],
+  "dependencies": {
+    "jquery": "1.11.0"
+  },
+  "keywords": [
+    "flight",
+    "indicator",
+    "artificial",
+    "horizon",
+    "instrument",
+    "gauge",
+    "fly",
+    "plane",
+    "monitoring",
+    "realtime"
+  ],
+  "licenses": [
+    {
+      "type": "GPLv3",
+      "url": "https://raw.githubusercontent.com/sebmatton/jQuery-Flight-Indicators/master/LICENSE"
+    }
+  ],
+  "homepage": "https://github.com/sebmatton/jQuery-Flight-Indicators",
+  "author": {
+    "name": "Sébastien Matton",
+    "url": "https://github.com/sebmatton/jQuery-Flight-Indicators"
+  }
+}
