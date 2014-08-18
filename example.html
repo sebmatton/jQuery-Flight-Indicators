@@ -40,21 +40,25 @@ https://github.com/sebmatton/jQuery-Flight-Indicators
     <p>This example shows a real time application for each type of indicator.</p>
     <div class="examples">
         <div>
+            <span id="airspeed"></span>
             <span id="attitude"></span>
+            <span id="altimeter"></span>            
+        </div><div>
+            <span id="turn_coordinator"></span>
             <span id="heading"></span>
             <span id="variometer"></span>
-        </div><div>
-            <span id="airspeed"></span>
-            <span id="altimeter"></span>
         </div>
     </div>
 
     <p>The code of this example is quite simple. The html :</p>
-    <p><pre><code class="language-javascript">&lt;span id=&quot;attitude&quot;&gt;&lt;/span&gt;
-&lt;span id=&quot;heading&quot;&gt;&lt;/span&gt;
-&lt;span id=&quot;variometer&quot;&gt;&lt;/span&gt;
-&lt;span id=&quot;airspeed&quot;&gt;&lt;/span&gt;
-&lt;span id=&quot;altimeter&quot;&gt;&lt;/span&gt;</code></pre></p>
+    <p><pre><code class="language-javascript">
+    &lt;span id=&quot;airspeed&quot;&gt;&lt;/span&gt;
+    &lt;span id=&quot;attitude&quot;&gt;&lt;/span&gt;
+    &lt;span id=&quot;altimeter&quot;&gt;&lt;/span&gt;
+    &lt;span id=&quot;turn_coordinator&quot;&gt;&lt;/span&gt;
+    &lt;span id=&quot;heading&quot;&gt;&lt;/span&gt;
+    &lt;span id=&quot;variometer&quot;&gt;&lt;/span&gt;
+    </code></pre></p>
     
     <p>And the javascript :</p>
     <p><pre><code class="language-javascript">// Dynamic examples
@@ -63,28 +67,34 @@ var heading = $.flightIndicator('#heading', 'heading', {heading:150, showBox:tru
 var variometer = $.flightIndicator('#variometer', 'variometer', {vario:-5, showBox:true});
 var airspeed = $.flightIndicator('#airspeed', 'airspeed', {showBox: false});
 var altimeter = $.flightIndicator('#altimeter', 'altimeter');
+var turn_coordinator = $.flightIndicator('#turn_coordinator', 'turn_coordinator', {turn:0});
 
 // Update at 20Hz
 var increment = 0;
 setInterval(function() {
+    // Airspeed update
+    airspeed.setAirSpeed(80+80*Math.sin(increment/10));
+
     // Attitude update
     attitude.setRoll(30*Math.sin(increment/10));
     attitude.setPitch(50*Math.sin(increment/20));
+
+    // Altimeter update
+    altimeter.setAltitude(10*increment);
+    altimeter.setPressure(1000+3*Math.sin(increment/50));
+    increment++;
     
+    // TC update
+    turn_coordinator.setTurn(30*Math.sin(increment/10));
+
     // Heading update
     heading.setHeading(increment);
     
     // Vario update
     variometer.setVario(2*Math.sin(increment/10));
     
-    // Airspeed update
-    airspeed.setAirSpeed(80+80*Math.sin(increment/10));
-    
-    // Altimeter update
-    altimeter.setAltitude(10*increment);
-    altimeter.setPressure(1000+3*Math.sin(increment/50));
-    increment++;
-}, 50);</code></pre></p>
+}, 50);   
+</code></pre></p>
 </div>
 
 <footer>
@@ -110,27 +120,31 @@ var heading = $.flightIndicator('#heading', 'heading', {heading:150, showBox:tru
 var variometer = $.flightIndicator('#variometer', 'variometer', {vario:-5, showBox:true});
 var airspeed = $.flightIndicator('#airspeed', 'airspeed', {showBox: false});
 var altimeter = $.flightIndicator('#altimeter', 'altimeter');
+var turn_coordinator = $.flightIndicator('#turn_coordinator', 'turn_coordinator', {turn:0});
 
 // Update at 20Hz
 var increment = 0;
 setInterval(function() {
+    // Airspeed update
+    airspeed.setAirSpeed(80+80*Math.sin(increment/10));
+
     // Attitude update
     attitude.setRoll(30*Math.sin(increment/10));
     attitude.setPitch(50*Math.sin(increment/20));
+
+    // Altimeter update
+    altimeter.setAltitude(10*increment);
+    altimeter.setPressure(1000+3*Math.sin(increment/50));
+    increment++;
     
+    // TC update
+    turn_coordinator.setTurn(30*Math.sin(increment/10));
+
     // Heading update
     heading.setHeading(increment);
     
     // Vario update
     variometer.setVario(2*Math.sin(increment/10));
-    
-    // Airspeed update
-    airspeed.setAirSpeed(80+80*Math.sin(increment/10));
-    
-    // Altimeter update
-    altimeter.setAltitude(10*increment);
-    altimeter.setPressure(1000+3*Math.sin(increment/50));
-    increment++;
 }, 50);
 </script>
 </body>

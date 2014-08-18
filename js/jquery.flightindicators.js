@@ -13,6 +13,7 @@
 			size : 200,
 			roll : 0,
 			pitch : 0,
+			turn : 0,
 			heading: 0,
 			vario: 0,
 			airspeed: 0,
@@ -39,6 +40,10 @@
 				case 'variometer':
 					$(this).html('<div class="instrument vario"><img src="' + settings.img_directory + 'fi_box.svg" class="background box" alt="" /><img src="' + settings.img_directory + 'vertical_mechanics.svg" class="box" alt="" /><div class="vario box"><img src="' + settings.img_directory + 'fi_needle.svg" class="box" alt="" /></div><div class="mechanics box"><img src="' + settings.img_directory + 'fi_circle.svg" class="box" alt="" /></div></div>');
 					_setVario(settings.vario);
+				break;
+				case 'turn_coordinator':
+					$(this).html('<div class="instrument turn_coordinator"><img src="' + settings.img_directory + 'fi_box.svg" class="background box" alt="" /><img src="' + settings.img_directory + 'turn_coordinator.svg" class="box" alt="" /><div class="turn box"><img src="' + settings.img_directory + 'fi_tc_airplane.svg" class="box" alt="" /></div><div class="mechanics box"><img src="' + settings.img_directory + 'fi_circle.svg" class="box" alt="" /></div></div>');
+					_setTurn(settings.turn);
 				break;
 				case 'airspeed':
 					$(this).html('<div class="instrument airspeed"><img src="' + settings.img_directory + 'fi_box.svg" class="background box" alt="" /><img src="' + settings.img_directory + 'speed_mechanics.svg" class="box" alt="" /><div class="speed box"><img src="' + settings.img_directory + 'fi_needle.svg" class="box" alt="" /></div><div class="mechanics box"><img src="' + settings.img_directory + 'fi_circle.svg" class="box" alt="" /></div></div>');
@@ -78,6 +83,12 @@
 			placeholder.each(function(){
 				$(this).find('div.instrument.heading div.heading').css('transform', 'rotate(' + -heading + 'deg)');
 			});	
+		}
+
+		function _setTurn(turn){
+			placeholder.each(function(){
+				$(this).find('div.instrument.turn_coordinator div.turn').css('transform', 'rotate('+turn+'deg)');
+			});
 		}
 
 		function _setVario(vario){
@@ -136,6 +147,7 @@
 		this.setRoll = function(roll){_setRoll(roll);}
 		this.setPitch = function(pitch){_setPitch(pitch);}
 		this.setHeading = function(heading){_setHeading(heading);}
+		this.setTurn = function(turn){_setTurn(turn);}
 		this.setVario = function(vario){_setVario(vario);}
 		this.setAirSpeed = function(speed){_setAirSpeed(speed);}
 		this.setAltitude = function(altitude){_setAltitude(altitude);}
