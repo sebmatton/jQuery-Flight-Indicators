@@ -98,7 +98,8 @@ setInterval(function() {
 </div>
 
 <footer>
-    jQuery Flight Indicator plugin by Sébastien Matton - License GPLv3
+    jQuery Flight Indicator plugin by Sébastien Matton - License GPLv3<br/>
+    <a title="By Mysid [CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0) or GFDL (http://www.gnu.org/copyleft/fdl.html)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3ATurn_coordinator.svg">Turn Coordinator SVG from Wikimedia Commons</a>
 </footer>
 
 <!-- Syntax color -->
@@ -137,8 +138,8 @@ setInterval(function() {
     altimeter.setPressure(1000+3*Math.sin(increment/50));
     increment++;
     
-    // TC update
-    turn_coordinator.setTurn(30*Math.sin(increment/10));
+    // TC update - note that the TC appears opposite the angle of the attitude indicator, as it mirrors the actual wing up/down position
+    turn_coordinator.setTurn((30*Math.sin(increment/10))*-1);
 
     // Heading update
     heading.setHeading(increment);
