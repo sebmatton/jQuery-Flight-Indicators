@@ -6,5 +6,5 @@ function countMyself() {
     }
 
     // Do something stupid to indicate the value
-    alert(++countMyself.counter);
+    return (++countMyself.counter);
 }
