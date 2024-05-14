@@ -13,7 +13,7 @@ Currently supported indicators are :
 
 Example & Demo
 -------------------
-Demo can be found here : [http://sebmatton.github.io/flightindicators/](http://sebmatton.github.io/flightindicators/)
+Demo can be found here : [https://sebmatton.github.io/flightindicators/](https://sebmatton.github.io/flightindicators/)
 
 Here are a few examples of currently implemented indicators :
 
@@ -65,16 +65,16 @@ Initial settings can be modified using the `options` parameter. Here are the val
 
 ```js
 var options = {
-	size : 200,				// Sets the size in pixels of the indicator (square)
-	roll : 0,				// Roll angle in degrees for an attitude indicator
-	pitch : 0,				// Pitch angle in degrees for an attitude indicator
-	heading: 0,				// Heading angle in degrees for an heading indicator
-	vario: 0,				// Variometer in 1000 feets/min for the variometer indicator
-	airspeed: 0,			// Air speed in knots for an air speed indicator
-	altitude: 0,			// Altitude in feets for an altimeter indicator
-	pressure: 1000,			// Pressure in hPa for an altimeter indicator
-	showBox : true,			// Sets if the outer squared box is visible or not (true or false)
-	img_directory : 'img/'	// The directory where the images are saved to
+	size : 200,             // Sets the size in pixels of the indicator (square)
+	roll : 0,               // Roll angle in degrees for an attitude indicator
+	pitch : 0,              // Pitch angle in degrees for an attitude indicator
+	heading: 0,             // Heading angle in degrees for an heading indicator
+	vario: 0,               // Variometer in 1000 feets/min for the variometer indicator
+	airspeed: 0,            // Air speed in knots for an air speed indicator
+	altitude: 0,            // Altitude in feets for an altimeter indicator
+	pressure: 1000,         // Pressure in hPa for an altimeter indicator
+	showBox : true,         // Sets if the outer squared box is visible or not (true or false)
+	img_directory : 'img/'  // The directory where the images are saved to
 }
 ```
 
@@ -93,16 +93,16 @@ attitude.setRoll(30); // Sets the roll to 30 degrees
 Here are the valid methods :
 
 ```js
-indicator.setRoll(roll);			// Sets the roll of an attitude indicator
-indicator.setPitch(pitch);			// Sets the pitch of an attitude indicator
-indicator.setHeading(heading);		// Sets the heading of an heading indicator
-indicator.setVario(vario);			// Sets the climb speed of an variometer indicator
-indicator.setAirSpeed(speed);		// Sets the speed of an airspeed indicator
-indicator.setAltitude(altitude);	// Sets the altitude of an altimeter indicator
-indicator.setPressure(pressure);	// Sets the pressure of an altimeter indicator
-indicator.resize(size);				// Sets the size of any indicators
-indicator.showBox();				// Make the outer squared box of any instrument visible
-indicator.hideBox();				// Make the outer squared box of any instrument invisible
+indicator.setRoll(roll);            // Sets the roll of an attitude indicator
+indicator.setPitch(pitch);          // Sets the pitch of an attitude indicator
+indicator.setHeading(heading);      // Sets the heading of an heading indicator
+indicator.setVario(vario);          // Sets the climb speed of an variometer indicator
+indicator.setAirSpeed(speed);       // Sets the speed of an airspeed indicator
+indicator.setAltitude(altitude);    // Sets the altitude of an altimeter indicator
+indicator.setPressure(pressure);    // Sets the pressure of an altimeter indicator
+indicator.resize(size);             // Sets the size of any indicators
+indicator.showBox();                // Make the outer squared box of any instrument visible
+indicator.hideBox();                // Make the outer squared box of any instrument invisible
 ```
 
 Author and License
